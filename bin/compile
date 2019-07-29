@@ -51,11 +51,6 @@ rsync -avz $CACHE_DIR/usr/local/lib/ ${INSTALL_DIR}
 
 set-env LD_LIBRARY_PATH '/app/.heroku/vendor/lib:$LD_LIBRARY_PATH'
 
-echo
-echo "-----> Found installed onigmo library files:"
-find ${INSTALL_DIR}
-echo
-
 # Provide an environment for subsequent buildpacks
 cat >${BP_DIR}/export <<EOF
 export LIBRARY_PATH="$CACHE_DIR/usr/local/lib:\${LIBRARY_PATH}"
